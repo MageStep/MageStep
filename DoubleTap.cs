@@ -12,9 +12,11 @@ public class DoubleTap : MonoBehaviour
     bool tapped = false;
 
     private PlayerMovement movement;
+    private PlayerAttack attack;
 
     void Start() {
         movement = GetComponent<PlayerMovement>();
+        attack = GetComponent<PlayerAttack>();
     }
 
     void Update()
@@ -22,14 +24,14 @@ public class DoubleTap : MonoBehaviour
         if(Input.GetButtonDown("Fire1")){
             if(tapped) {
                 Debug.Log("Double Tap");
-                movement.Attack();
+                attack.Attack();
                 tapped = false;
                 timer = 0;
-                GetComponent<Renderer>().material.color = Color.blue;
+                
             }
             else {
                 tapped = true;
-                GetComponent<Renderer>().material.color = Color.red;
+                
             }
         } //end of if(Input...)
 
