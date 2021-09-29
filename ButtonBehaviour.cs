@@ -9,9 +9,13 @@ public class ButtonBehaviour : MonoBehaviour
 
     private ScoreKeeper manager;
 
+    private BuildAudio audioManager;
+
     void Start()
     {
         manager = GameObject.Find("GameManager").GetComponent<ScoreKeeper>();
+        audioManager = manager.gameObject.GetComponent<BuildAudio>();
+
         if(original == false)
         {
             StartCoroutine(EndOfLife());
@@ -35,6 +39,7 @@ public class ButtonBehaviour : MonoBehaviour
         {
             //get reference to gameManager
             manager.ChangeHealth();
+            audioManager.PlayClip(soundType.Hurt);
         }
         Destroy(this.gameObject);
     }
@@ -42,8 +47,10 @@ public class ButtonBehaviour : MonoBehaviour
     public void Pressed() {
         if(buttonIsBad) {
             Debug.Log("We've destroyed a bad button.");
+            audioManager.PlayClip(soundType.hitBadButton);
         } else {
             Debug.Log("Oh No! We've destroyed a good button.");
+            audioManager.PlayClip(soundType.hitGoodButton);
         }
         Destroy(this.gameObject);
     }
