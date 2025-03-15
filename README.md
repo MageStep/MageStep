@@ -1,6 +1,6 @@
 - 👋 Hi, I’m @MageStep
-- 👀 I’m interested in Game Design and Coding, specifically in c#
-- 🌱 I’m currently learning how to code properly and efficiently in c#
+- 👀 I’m interested in Game Design, Web Development, and Coding.
+- 🌱 I’m currently learning how to code properly and efficiently in many different coding languages
 - 📫 How to reach me ... @ magestep2002@gmail.com
 
 <!---
